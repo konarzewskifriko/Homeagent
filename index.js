@@ -44,7 +44,7 @@ export default {
 
    if(u.pathname==="/api/ai/chat" && req.method==="POST"){
      const x=await req.json();
-     const result=await env.AI.run("@cf/meta/llama-3.1-8b-instruct",{
+     const result=await env.AI.run("@cf/meta/llama-3.1-8b-instruct-fp8",{
        messages:(x.messages||[]).slice(-20)
      });
      return J({ok:true,result});
