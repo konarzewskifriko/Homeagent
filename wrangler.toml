@@ -8,7 +8,8 @@ binding = "AI"
 [[d1_databases]]
 binding = "DB"
 database_name = "homeagent-db"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "4af28cc7-61fa-437b-b86c-2886e629d3b2"
+
 
 [vars]
 CRM_PROVIDER = "asari"
