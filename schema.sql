@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS leads(
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ name TEXT,email TEXT,phone TEXT,message TEXT,
+ source TEXT DEFAULT 'web',status TEXT DEFAULT 'new',
+ crm_external_id TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS sync_queue(
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ entity_type TEXT NOT NULL,entity_id TEXT NOT NULL,target TEXT NOT NULL,
+ payload TEXT NOT NULL,status TEXT DEFAULT 'pending',attempts INTEGER DEFAULT 0,
+ last_error TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
